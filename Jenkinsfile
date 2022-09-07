@@ -8,7 +8,7 @@ pipeline{
 
      steps{
 
-        checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'team3hook', url: 'https://github.com/topsicle1/project9.git']]])
+        checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'team3hook', url: 'https://github.com/Team3-Group1-AppBank/project9.git']]])
 
      }
 
