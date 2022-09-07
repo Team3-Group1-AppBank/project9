@@ -33,7 +33,6 @@ pipeline{
           steps{
 
             sh 'bash -x /var/lib/jenkins/project9/temitope.sh'
-            echo 'testing'
 
           }
 
