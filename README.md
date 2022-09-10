@@ -1,4 +1,8 @@
 # Project 9a
+Steps taken to contribute to the project
+
+Created a Jenkins server on AWS with best practice minimum requirements - T2 medium, 20GB, Ubuntu 18.04 AMI.
+Created users to be able to ssh to the server
 Created a Jenkins server on AWS with best practice minimum requirements - T2 medium, 20GB, Ubuntu 18.04 AMI.
 Created users to be able to ssh to the server
 Users created script in the Jenkins server (project 7) - /var/lib/jenkins/project9
