@@ -10,70 +10,70 @@ pipeline{
         checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'team3hook', url: 'https://github.com/Team3-Group1-AppBank/project9.git']]])
      }
     }
-   stage('parallel1'){
+    stage('parallel1'){
       parallel{
-        stage('victoria'){
+        stage('actions1'){
           steps{
-            sh 'bash -x /var/lib/jenkins/project9/victoria.sh'
+            sh 'pwd'
           }
         }
-        stage('temitope'){
+        stage('actions2'){
           steps{
-            sh 'bash -x /var/lib/jenkins/project9/temitope.sh'
+            sh 'lscpu'
           }
         }
       }
     }
     stage('parallel2'){
-      agent {
-    label {
-    label 'slave2'
-    }
-  }
       parallel{
-        stage('daniel'){
+        stage('actions3'){
           steps{
-            sh 'bash -x /var/lib/jenkins/project9/daniel.sh'
+            sh 'pwd'
           }
         }
-        stage('joe'){
+        stage('actions4'){
           steps{
-            sh 'bash -x /var/lib/jenkins/project9/joe.sh'
+            sh 'lscpu'
           }
         }
       }
     }
      stage('parallel3'){
-       agent {
-    label {
-    label 'slave3'
-    }
-  }
       parallel{
-        stage('sukhman'){
+        stage('actions5'){
           steps{
-            sh 'bash -x /var/lib/jenkins/project9/sukhman.sh'
+            sh 'pwd'
           }
         }
-        stage('kingsley'){
+        stage('actions6'){
           steps{
-            sh 'bash -x /var/lib/jenkins/project9/kingsley.sh'
+            sh 'lscpu'
           }
         }
       }
     }
      stage('parallel4'){
       parallel{
-        stage('gloria'){
+        stage('actions7'){
           steps{
-            sh 'bash -x /var/lib/jenkins/project9/gloria.sh'
+            sh 'pwd'
           }
         }
-        stage('frank'){
+        stage('actions8'){
           steps{
-            sh 'bash -x /var/lib/jenkins/project9/frank.sh'
+            sh 'lscpu'
           }
         }
+      }
+    }
+      stage('codebuild'){
+      agent {
+        label {
+          label 'slave2'
+        }
+      }
+      steps{
+        sh 'cat /etc/passwd'
       }
     }
   }
