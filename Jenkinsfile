@@ -76,7 +76,7 @@ pipeline{
         sh 'cat /etc/passwd'
       }
     }
-     stage('codebuild'){
+     stage('codebuilds'){
       agent {
         label {
           label 'slave3'
