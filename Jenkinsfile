@@ -1,5 +1,9 @@
 pipeline{
-  agent any
+  agent {
+    label {
+    label 'slave1'
+    }
+  }
   stages{  
     stage('git-clone'){
      steps{
@@ -21,6 +25,11 @@ pipeline{
       }
     }
     stage('parallel2'){
+      agent {
+    label {
+    label 'slave2'
+    }
+  }
       parallel{
         stage('daniel'){
           steps{
@@ -35,6 +44,11 @@ pipeline{
       }
     }
      stage('parallel3'){
+       agent {
+    label {
+    label 'slave3'
+    }
+  }
       parallel{
         stage('sukhman'){
           steps{
