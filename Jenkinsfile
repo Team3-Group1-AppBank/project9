@@ -79,7 +79,7 @@ pipeline{
      stage('codebuilds'){
       agent {
         label {
-          label 'slave3'
+          label 'slave3s'
                  }
       }
       steps{
